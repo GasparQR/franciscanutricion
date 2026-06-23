@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iBooks · Francisca Nutrición</title>
+<meta name="description" content="Guías y recetas descargables para hacer más simple tu alimentación. Comprá y descargá al instante.">
+<meta property="og:title" content="iBooks · Francisca Nutrición">
+<meta property="og:description" content="Guías y recetas descargables para hacer más simple tu alimentación.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/store.css">
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap" style="padding-inline:14px">
+    <div class="nav-inner">
+      <a href="/" class="brand"><span class="leaf">❋</span>Francisca Nutrición</a>
+      <div class="nav-cta">
+        <a href="/#servicios" class="btn btn-ghost">Volver</a>
+        <a href="/#contacto" class="btn btn-primary">Reservar consulta</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CATÁLOGO -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">iBooks</span>
+      <h2>Guías para simplificar tu alimentación</h2>
+      <p>Materiales prácticos, descargables al instante. Comprá de forma segura con Mercado Pago y recibí tu iBook en tu email.</p>
+    </div>
+
+    <div id="catalog-status">
+      <div class="center muted"><div class="spinner"></div>Cargando iBooks…</div>
+    </div>
+    <div class="cards" id="catalog"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Francisca Fernandez · Licenciada en Nutrición.</span>
+      <span><a href="/">Inicio</a> · <a href="/#contacto">Contacto</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="/assets/store.js"></script>
+</body>
+</html>
