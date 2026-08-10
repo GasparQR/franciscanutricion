@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "buildCommand": "echo 'Sitio estatico: sin build. Las funciones /api se compilan automaticamente.'",
+  "buildCommand": "echo 'Sitio estatico: sin build.'",
   "outputDirectory": ".",
   "headers": [
     {

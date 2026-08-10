@@ -1,4 +1,6 @@
-// store.js · Catálogo de iBooks y flujo de compra (Mercado Pago Checkout Pro)
+// store.js · Catálogo de iBooks y confirmación de compra por WhatsApp
+
+const WHATSAPP_NUMBER = '5492995129235';
 
 const ARS = new Intl.NumberFormat('es-AR', {
   style: 'currency',
@@ -8,6 +10,11 @@ const ARS = new Intl.NumberFormat('es-AR', {
 
 function bookIcon() {
   return `<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>`;
+}
+
+function whatsappLink(p) {
+  const message = `Hola! Te mando el comprobante de pago por el iBook "${p.title}" (${ARS.format(p.price)}).`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
 function cardHtml(p) {
@@ -21,10 +28,10 @@ function cardHtml(p) {
       <h3>${escapeHtml(p.title)}</h3>
       <p>${escapeHtml(p.description)}</p>
       <div class="price">${ARS.format(p.price)}</div>
-      <button class="btn btn-primary buy-btn" data-id="${p.id}">
-        Comprar
+      <a class="btn btn-primary buy-btn" href="${whatsappLink(p)}" target="_blank" rel="noopener">
+        Confirmar compra
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
+      </a>
     </article>`;
 }
 
@@ -34,55 +41,18 @@ function escapeHtml(str) {
   ));
 }
 
-async function loadCatalog() {
+function loadCatalog() {
   const grid = document.getElementById('catalog');
   const status = document.getElementById('catalog-status');
   if (!grid) return;
 
-  try {
-    const res = await fetch('/api/products');
-    if (!res.ok) throw new Error('No se pudo cargar el catálogo');
-    const { products } = await res.json();
-
-    if (!products || products.length === 0) {
-      status.innerHTML = '<div class="notice">Pronto vas a encontrar nuevos iBooks acá. ✨</div>';
-      return;
-    }
-
-    status.innerHTML = '';
-    grid.innerHTML = products.map(cardHtml).join('');
-    grid.querySelectorAll('.buy-btn').forEach((btn) => {
-      btn.addEventListener('click', () => buy(btn));
-    });
-  } catch (err) {
-    console.error(err);
-    status.innerHTML = '<div class="notice error">No pudimos cargar los iBooks. Recargá la página o intentá más tarde.</div>';
+  if (!PRODUCTS || PRODUCTS.length === 0) {
+    status.innerHTML = '<div class="notice">Pronto vas a encontrar nuevos iBooks acá. ✨</div>';
+    return;
   }
-}
 
-async function buy(btn) {
-  const productId = btn.dataset.id;
-  const original = btn.innerHTML;
-  btn.disabled = true;
-  btn.textContent = 'Redirigiendo…';
-
-  try {
-    const res = await fetch('/api/checkout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ product_id: productId }),
-    });
-    const data = await res.json();
-    if (!res.ok || !data.init_point) {
-      throw new Error(data.error || 'No se pudo iniciar el pago');
-    }
-    window.location.href = data.init_point;
-  } catch (err) {
-    console.error(err);
-    btn.disabled = false;
-    btn.innerHTML = original;
-    alert('No pudimos iniciar el pago. Por favor intentá nuevamente.');
-  }
+  status.innerHTML = '';
+  grid.innerHTML = PRODUCTS.map(cardHtml).join('');
 }
 
 document.addEventListener('DOMContentLoaded', loadCatalog);
