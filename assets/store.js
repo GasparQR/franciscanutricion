@@ -22,10 +22,15 @@ function cardHtml(p) {
     ? `<img class="book-cover" src="${p.cover_image}" alt="Portada de ${escapeHtml(p.title)}" loading="lazy" onerror="this.outerHTML='<div class=&quot;book-cover placeholder&quot;>${bookIcon()}</div>'">`
     : `<div class="book-cover placeholder">${bookIcon()}</div>`;
 
+  const subtitle = p.subtitle
+    ? `<p class="muted" style="margin:-.3rem 0 .6rem;font-size:.92rem">${escapeHtml(p.subtitle)}</p>`
+    : '';
+
   return `
     <article class="card">
       ${cover}
       <h3>${escapeHtml(p.title)}</h3>
+      ${subtitle}
       <p>${escapeHtml(p.description)}</p>
       <div class="price">${ARS.format(p.price)}</div>
       <a class="btn btn-primary buy-btn" href="${whatsappLink(p)}" target="_blank" rel="noopener">
