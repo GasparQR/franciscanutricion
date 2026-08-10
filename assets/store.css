@@ -1,5 +1,5 @@
 /* ============================================================
-   store.css · Estilos del módulo de iBooks
+   store.css · Estilos del módulo de Ebooks
    Reutiliza el sistema de diseño de la landing (index.html):
    misma paleta, tipografías y componentes (.btn, .card, .wrap...).
    La landing NO se modifica; estos tokens son una copia fiel.
@@ -106,7 +106,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;l
 .card h3{font-size:1.45rem;margin-bottom:.5rem}
 .card p{color:var(--ink-soft);flex:1;margin-bottom:1.3rem}
 
-/* ── Específico de iBooks ── */
+/* ── Específico de Ebooks ── */
 .book-cover{
   width:100%;aspect-ratio:3/4;border-radius:18px;object-fit:cover;
   margin-bottom:1.2rem;background:linear-gradient(135deg,var(--sage-soft),var(--clay-soft));

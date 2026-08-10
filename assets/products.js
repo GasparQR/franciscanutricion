@@ -1,5 +1,5 @@
-// products.js · Catálogo estático de iBooks
-// Para agregar, editar o dar de baja un iBook, modificá este archivo y hacé deploy.
+// products.js · Catálogo estático de Ebooks
+// Para agregar, editar o dar de baja un Ebook, modificá este archivo y hacé deploy.
 // No hace falta base de datos ni backend.
 
 const PRODUCTS = [

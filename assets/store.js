@@ -1,4 +1,4 @@
-// store.js · Catálogo de iBooks y confirmación de compra por WhatsApp
+// store.js · Catálogo de Ebooks y confirmación de compra por WhatsApp
 
 const WHATSAPP_NUMBER = '5492995129235';
 
@@ -13,7 +13,7 @@ function bookIcon() {
 }
 
 function whatsappLink(p) {
-  const message = `Hola! Te mando el comprobante de pago por el iBook "${p.title}" (${ARS.format(p.price)}).`;
+  const message = `Hola! Te mando el comprobante de pago por el Ebook "${p.title}" (${ARS.format(p.price)}).`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
@@ -47,7 +47,7 @@ function loadCatalog() {
   if (!grid) return;
 
   if (!PRODUCTS || PRODUCTS.length === 0) {
-    status.innerHTML = '<div class="notice">Pronto vas a encontrar nuevos iBooks acá. ✨</div>';
+    status.innerHTML = '<div class="notice">Pronto vas a encontrar nuevos Ebooks acá. ✨</div>';
     return;
   }
 
