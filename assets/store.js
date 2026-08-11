@@ -92,4 +92,31 @@ function loadCatalog() {
   setupCarousel();
 }
 
-document.addEventListener('DOMContentLoaded', loadCatalog);
+function setupAliasCopy() {
+  const btn = document.getElementById('copyAliasBtn');
+  const aliasEl = document.getElementById('aliasValue');
+  if (!btn || !aliasEl) return;
+
+  btn.addEventListener('click', async () => {
+    const alias = aliasEl.textContent.trim();
+    try {
+      await navigator.clipboard.writeText(alias);
+    } catch {
+      const helper = document.createElement('textarea');
+      helper.value = alias;
+      document.body.appendChild(helper);
+      helper.select();
+      document.execCommand('copy');
+      helper.remove();
+    }
+    const original = btn.textContent;
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadCatalog();
+  setupAliasCopy();
+});
