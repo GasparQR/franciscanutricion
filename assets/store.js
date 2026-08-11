@@ -53,6 +53,30 @@ function escapeHtml(str) {
   ));
 }
 
+function setupCarousel() {
+  const track = document.getElementById('catalog');
+  const prev = document.getElementById('catalogPrev');
+  const next = document.getElementById('catalogNext');
+  if (!track || !prev || !next) return;
+
+  const step = () => {
+    const card = track.querySelector('.card');
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    return card ? card.getBoundingClientRect().width + gap : 0;
+  };
+  const updateButtons = () => {
+    const max = track.scrollWidth - track.clientWidth - 1;
+    prev.disabled = track.scrollLeft <= 0;
+    next.disabled = track.scrollLeft >= max;
+  };
+
+  prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  track.addEventListener('scroll', updateButtons);
+  window.addEventListener('resize', updateButtons);
+  updateButtons();
+}
+
 function loadCatalog() {
   const grid = document.getElementById('catalog');
   const status = document.getElementById('catalog-status');
@@ -65,6 +89,7 @@ function loadCatalog() {
 
   status.innerHTML = '';
   grid.innerHTML = PRODUCTS.map(cardHtml).join('');
+  setupCarousel();
 }
 
 document.addEventListener('DOMContentLoaded', loadCatalog);
