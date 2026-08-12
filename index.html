@@ -132,6 +132,9 @@
     max-width:80%;
   }
   .ph svg{position:absolute;width:46px;height:46px;top:18px;left:18px;opacity:.4;color:var(--sage-deep);z-index:1}
+  .ph-photo{background:none}
+  .ph-photo::after{content:none}
+  .ph-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
   /* ---------- NAV ---------- */
   header.nav{position:sticky;top:0;z-index:50;transition:padding .3s ease}
@@ -423,8 +426,8 @@
         </div>
       </div>
       <div class="hero-photo reveal">
-        <div class="ph" data-label="Reemplazá con tu foto profesional — cálida y cercana">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+        <div class="ph ph-photo">
+          <img src="/assets/img/fran-consultorio.jpg" alt="Francisca en su consultorio de nutrición" loading="lazy">
         </div>
         
       </div>
@@ -437,8 +440,8 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about-photo reveal">
-        <div class="ph" data-label="Foto tuya en consulta o cocina">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+        <div class="ph ph-photo">
+          <img src="/assets/img/fran-cocina.jpg" alt="Francisca preparando ingredientes en su cocina" loading="lazy">
         </div>
       </div>
       <div class="about-copy reveal">
