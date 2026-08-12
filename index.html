@@ -147,7 +147,7 @@
     box-shadow:var(--shadow-soft);
   }
   .brand{font-family:'Fraunces',serif;font-size:clamp(1.05rem,3.5vw,1.25rem);font-weight:600;letter-spacing:-.02em;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.5em;white-space:nowrap}
-  .brand .leaf{color:var(--sage)}
+  .brand .leaf{width:22px;height:22px;object-fit:contain;flex:none}
   .nav-links{display:flex;align-items:center;gap:1.8rem}
   .nav-links a:not(.btn){text-decoration:none;color:var(--ink-soft);font-weight:500;font-size:.95rem;transition:color .2s}
   .nav-links a:not(.btn):hover{color:var(--sage-deep)}
@@ -386,7 +386,7 @@
 <header class="nav">
   <div class="wrap" style="padding-inline:14px">
     <div class="nav-inner">
-      <a href="#inicio" class="brand"><span class="leaf">❋</span>Francisca Nutrición</a>
+      <a href="#inicio" class="brand"><img class="leaf" src="/assets/img/logo-mark.png" alt="" width="22" height="22">Francisca Nutrición</a>
       <nav class="nav-links" id="navLinks">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#servicios">Servicios</a>
@@ -589,7 +589,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#inicio" class="brand"><span class="leaf">❋</span>Francisca Fernandez</a>
+        <a href="#inicio" class="brand"><img class="leaf" src="/assets/img/logo-mark.png" alt="" width="22" height="22">Francisca Fernandez</a>
         <p>Nutrición real, basada en evidencia y pensada para tu estilo de vida. Sin dietas extremas.</p>
       </div>
       <div>
