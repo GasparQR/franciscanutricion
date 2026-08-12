@@ -13,15 +13,14 @@ const PRODUCTS = [
   {
     id: 'recetario',
     title: 'Recetario',
-    description: 'Si te gustan las recetas fáciles, simples y sin complicarte la vida… este recetario es para vos. Recetas para hacer a ojo, sin una lista eterna de ingredientes ni pasos imposibles, usando cosas que probablemente ya tenés en casa.',
+    description: 'Si te gustan las recetas fáciles, simples y no querés complicarte la vida cocinando… este recetario es para vos. Recetas para hacer a ojo, sin una lista eterna de ingredientes ni pasos imposibles, usando cosas que probablemente ya tenés en casa.',
     price: 12000,
     cover_image: '/assets/covers/recetario.jpg',
   },
   {
     id: 'planner-semanal',
     title: 'Planner Semanal',
-    subtitle: 'La forma simple de tener tus comidas encaminadas.',
-    description: 'Si tenés un domingo libre, usalo para descansar, salir, dormir una siesta o hacer eso que durante la semana nunca tenés tiempo de hacer. No soy del team "pasar todo el domingo cocinando para la semana". En este planner te muestro otra forma de organizar tus comidas y resolver la semana sin vivir en la cocina.',
+    description: 'La forma simple de tener tus comidas encaminadas. Si tenés un domingo libre, usalo para descansar, salir, dormir una siesta o hacer eso que durante la semana nunca tenés tiempo de hacer. En este planner te muestro otra forma de organizar tus comidas y resolver la semana sin vivir en la cocina.',
     price: 26000,
     cover_image: '/assets/covers/planner-semanal.jpg',
   },
