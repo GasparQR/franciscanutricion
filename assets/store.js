@@ -33,13 +33,23 @@ function cardHtml(p) {
     ? `<p class="muted" style="margin:-.3rem 0 .6rem;font-size:.92rem">${escapeHtml(p.subtitle)}</p>`
     : '';
 
+  const priceBlock = p.original_price
+    ? `<div class="price-block">
+        <span class="launch-badge">🚀 Precio de lanzamiento</span>
+        <div class="price-row">
+          <span class="price-old">${ARS.format(p.original_price)}</span>
+          <span class="price">${ARS.format(p.price)}</span>
+        </div>
+      </div>`
+    : `<div class="price">${ARS.format(p.price)}</div>`;
+
   return `
     <article class="card">
       ${cover}
       <h3>${escapeHtml(p.title)}</h3>
       ${subtitle}
       <p>${escapeHtml(p.description)}</p>
-      <div class="price">${ARS.format(p.price)}</div>
+      ${priceBlock}
       <a class="btn btn-primary buy-btn" href="${whatsappLink(p)}" target="_blank" rel="noopener">
         Confirmar compra
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

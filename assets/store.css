@@ -84,7 +84,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;l
   box-shadow:var(--shadow-soft);
 }
 .brand{font-family:'Fraunces',serif;font-size:clamp(1.05rem,3.5vw,1.25rem);font-weight:600;letter-spacing:-.02em;text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:.5em;white-space:nowrap}
-.brand .leaf{color:var(--sage)}
+.brand .leaf{width:22px;height:22px;object-fit:contain;flex:none}
 .nav-cta{display:flex;align-items:center;gap:.6rem}
 .nav-cta .btn{padding:.7em 1.3em;font-size:.92rem}
 
@@ -132,7 +132,19 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;l
   display:block;box-shadow:var(--shadow-soft);
 }
 .book-cover.placeholder{display:grid;place-items:center;color:var(--sage-deep)}
-.price{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--sage-deep);font-weight:600;margin-bottom:1.1rem}
+.price{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--sage-deep);font-weight:600}
+.price-block{margin-bottom:1.1rem}
+.launch-badge{
+  display:inline-flex;align-items:center;gap:.35em;
+  background:var(--clay-soft);color:var(--ink);
+  font-size:.74rem;font-weight:700;letter-spacing:.02em;
+  padding:.3em .75em;border-radius:999px;margin-bottom:.55rem;
+}
+.price-row{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.price-old{
+  font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink-soft);
+  text-decoration:line-through;text-decoration-color:var(--clay);opacity:.8;
+}
 .card .btn{width:100%}
 
 /* ── Estados / feedback ── */
