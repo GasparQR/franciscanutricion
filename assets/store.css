@@ -123,6 +123,7 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;l
 .card:hover{transform:translateY(-8px);box-shadow:var(--shadow-card)}
 .card h3{font-size:1.45rem;margin-bottom:.5rem}
 .card p{color:var(--ink-soft);flex:1;margin-bottom:1.3rem}
+.card p.muted{flex:none}
 
 /* ── Específico de Ebooks ── */
 .book-cover{
