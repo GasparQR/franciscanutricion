@@ -5,7 +5,9 @@
     filter:drop-shadow(0 10px 14px rgba(60,66,45,.18));
     animation:pmove var(--dur,22s) ease-in-out var(--delay,0s) infinite alternate;
     will-change:transform;
+    transition:opacity .3s ease;
   }
+  .palta.is-hidden{opacity:0 !important}
   .palta img{width:100%;height:auto;display:block;pointer-events:none;-webkit-user-drag:none}
   @keyframes pmove{
     0%  {transform:translate(0,0) rotate(var(--r0,0deg))}

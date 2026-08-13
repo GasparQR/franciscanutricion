@@ -14,8 +14,10 @@
     const cellW_vw = (vpW / 100) * cellW;   // vw
     const cellH_vh = (vpH / 100) * cellH;   // vh
     const gap = 1.5;                    // % de separación entre celdas
+
     const style = document.createElement('style');
     let css = '';
+    const paltaEls = [];
     for (let i=0;i<count;i++){
       const p = document.createElement('span');
       p.className = 'palta';
@@ -55,7 +57,28 @@
       p.style.cssText = `left:${baseLeft.toFixed(1)}%;top:${baseTop.toFixed(1)}%;width:${w.toFixed(0)}px;opacity:${rnd(.55,.92).toFixed(2)};`;
       p.style.animation = reduce ? 'none' : `${name} ${dur.toFixed(1)}s ease-in-out ${delay.toFixed(1)}s infinite`;
       bg.appendChild(p);
+      paltaEls.push(p);
     }
     style.textContent = css;
     document.head.appendChild(style);
+
+    // ocultar (con fade) las paltas que en cada momento queden sobre bloques de
+    // texto "al aire" (sin fondo propio) — como la capa es fixed, distinto
+    // contenido pasa por debajo al scrollear, así que esto se re-evalúa en vivo.
+    const PROTECT_SELECTOR = '.nav-inner, .hero-copy, .about-copy, .section-head, .social-head, .foot-brand, .foot-bottom';
+    const PROTECT_PAD = 14; // px de margen de seguridad alrededor del texto
+    function updatePaltaVisibility(){
+      const rects = Array.from(document.querySelectorAll(PROTECT_SELECTOR)).map(el => el.getBoundingClientRect());
+      paltaEls.forEach(p => {
+        const r = p.getBoundingClientRect();
+        const hidden = rects.some(pr =>
+          r.left < pr.right + PROTECT_PAD && r.right > pr.left - PROTECT_PAD &&
+          r.top  < pr.bottom + PROTECT_PAD && r.bottom > pr.top - PROTECT_PAD
+        );
+        p.classList.toggle('is-hidden', hidden);
+      });
+    }
+    updatePaltaVisibility();
+    setInterval(updatePaltaVisibility, 400);
+    window.addEventListener('resize', updatePaltaVisibility);
   })();
