@@ -4,6 +4,14 @@
 
 const PRODUCTS = [
   {
+    id: 'basicos-dieta-cafes',
+    title: 'Básicos de la Diete y Cafés',
+    description: 'Esos infaltables que no pueden faltar en tu alacena para resolver cualquier comida, más opciones de cafés tostados.',
+    price: 0,
+    free: true,
+    cover_image: '/assets/covers/basicos.jpg',
+  },
+  {
     id: 'guia-desayunos-meriendas',
     title: 'Guía de Desayunos y Meriendas',
     description: 'Si sos de los que "siempre terminan comiendo lo mismo" o ya no sabés qué desayunar o merendar… esta guía es para vos. Ideas fáciles, ricas y completas para variar tus desayunos y meriendas sin tener que pensar todos los días qué preparar.',

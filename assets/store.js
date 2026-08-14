@@ -20,7 +20,9 @@ function showPlaceholderCover(imgEl) {
 }
 
 function whatsappLink(p) {
-  const message = `Hola! Te mando el comprobante de pago por el Ebook "${p.title}" (${ARS.format(p.price)}).`;
+  const message = p.free
+    ? `Hola! Quiero mi ebook gratis "${p.title}".`
+    : `Hola! Te mando el comprobante de pago por el Ebook "${p.title}" (${ARS.format(p.price)}).`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
@@ -33,7 +35,9 @@ function cardHtml(p) {
     ? `<p class="muted" style="margin:-.3rem 0 .6rem;font-size:.92rem">${escapeHtml(p.subtitle)}</p>`
     : '';
 
-  const priceBlock = p.original_price
+  const priceBlock = p.free
+    ? `<div class="price-block"><span class="free-badge">✨ Gratis</span></div>`
+    : p.original_price
     ? `<div class="price-block">
         <span class="launch-badge">🚀 Precio de lanzamiento</span>
         <div class="price-row">
@@ -43,6 +47,8 @@ function cardHtml(p) {
       </div>`
     : `<div class="price">${ARS.format(p.price)}</div>`;
 
+  const buyLabel = p.free ? 'Quiero mi ebook gratis' : 'Confirmar compra';
+
   return `
     <article class="card">
       ${cover}
@@ -51,7 +57,7 @@ function cardHtml(p) {
       <p>${escapeHtml(p.description)}</p>
       ${priceBlock}
       <a class="btn btn-primary buy-btn" href="${whatsappLink(p)}" target="_blank" rel="noopener">
-        Confirmar compra
+        ${buyLabel}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </article>`;
