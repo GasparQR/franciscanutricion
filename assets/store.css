@@ -140,6 +140,12 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;l
   font-size:.74rem;font-weight:700;letter-spacing:.02em;
   padding:.3em .75em;border-radius:999px;margin-bottom:.55rem;
 }
+.free-badge{
+  display:inline-flex;align-items:center;gap:.35em;
+  background:var(--sage-soft);color:var(--sage-deep);
+  font-size:.74rem;font-weight:700;letter-spacing:.02em;
+  padding:.3em .75em;border-radius:999px;margin-bottom:.55rem;
+}
 .price-row{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
 .price-old{
   font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink-soft);
