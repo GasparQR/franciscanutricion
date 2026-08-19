@@ -9,6 +9,7 @@ const PRODUCTS = [
     description: 'Esos infaltables que no pueden faltar en tu alacena para resolver cualquier comida, más opciones de cafés tostados.',
     price: 0,
     free: true,
+    pdf_url: '/assets/ebooks/basicos-dieta-cafes.pdf',
     cover_image: '/assets/covers/basicos.jpg',
   },
   {
