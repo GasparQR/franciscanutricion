@@ -96,21 +96,20 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;l
 
 /* ── Carrusel de tarjetas (scroll horizontal con snap) ── */
 .carousel{position:relative}
+/* Flechas en su propia fila (arriba a la derecha): nunca tapan las tarjetas */
+.carousel-nav{display:flex;justify-content:flex-end;gap:.6rem;margin-bottom:.9rem}
 .carousel-btn{
-  position:absolute;top:50%;transform:translateY(-50%);z-index:2;
   width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
   background:rgba(251,248,241,.85);backdrop-filter:blur(8px);color:var(--sage-deep);
   font-size:1.4rem;line-height:1;cursor:pointer;display:grid;place-items:center;
   box-shadow:var(--shadow-soft);transition:transform .2s ease,opacity .2s ease;
 }
-.carousel-btn:hover{transform:translateY(-50%) scale(1.06)}
-.carousel-btn.prev{left:-10px}
-.carousel-btn.next{right:-10px}
-.carousel-btn[disabled]{opacity:0;pointer-events:none}
+.carousel-btn:hover{transform:scale(1.06)}
+.carousel-btn[disabled]{opacity:.35;cursor:default;transform:none}
 .cards{
   display:flex;gap:1.4rem;overflow-x:auto;overflow-y:hidden;
   scroll-snap-type:x mandatory;scroll-behavior:smooth;
-  padding-block:.3rem;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+  padding-block:.8rem 1.2rem;-webkit-overflow-scrolling:touch;scrollbar-width:none;
 }
 .cards::-webkit-scrollbar{display:none}
 .card{
@@ -218,4 +217,16 @@ footer{padding:clamp(40px,6vw,70px) 0 40px;border-top:1px solid var(--line);marg
   .card{flex-basis:88%}
   .stat-grid{grid-template-columns:1fr}
   .nav-cta .btn{padding:.6em 1em;font-size:.85rem}
+  .nav-inner{padding:.55rem .55rem .55rem 1rem}
+  .alias-copy{flex-wrap:wrap}
+}
+@media(max-width:480px){
+  /* el logo ya lleva al inicio: sacamos "Volver" para que entre "Reservar consulta" */
+  .nav-cta .btn-ghost{display:none}
+  .nav-cta .btn{white-space:nowrap}
+  .brand{font-size:1rem}
+}
+@media(max-width:380px){
+  .nav-cta .btn{padding:.6em .85em;font-size:.8rem}
+  .brand{font-size:.95rem;gap:.4em}
 }

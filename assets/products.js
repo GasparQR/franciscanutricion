@@ -4,13 +4,13 @@
 
 const PRODUCTS = [
   {
-    id: 'basicos-dieta-cafes',
-    title: 'Básicos de la Diete y Cafés',
-    description: 'Esos infaltables que no pueden faltar en tu alacena para resolver cualquier comida, más opciones de cafés tostados.',
+    id: 'compras-inteligentes',
+    title: 'Compras Inteligentes',
+    description: 'Una guía práctica para aprender a elegir mejor en el súper y la dietética. Aprendé a leer etiquetas, interpretar listas de ingredientes y entender la información nutricional para tomar decisiones con más herramientas, sin dejarte llevar únicamente por lo que el envase dice que es “saludable”.',
     price: 0,
     free: true,
-    pdf_url: '/assets/ebooks/basicos-dieta-cafes.pdf',
-    cover_image: '/assets/covers/basicos.jpg',
+    pdf_url: '/assets/ebooks/compras-inteligentes.pdf',
+    cover_image: '/assets/covers/compras-inteligentes.jpg',
   },
   {
     id: 'guia-desayunos-meriendas',
