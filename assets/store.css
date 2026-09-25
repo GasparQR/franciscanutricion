@@ -159,11 +159,6 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;l
 }
 .notice.error{border-color:var(--clay);color:#8a4a28}
 
-/* señales de confianza sobre el pliegue */
-.trust{
-  display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;list-style:none;
-  margin-bottom:1.4rem;color:var(--ink-soft);font-size:.95rem;font-weight:500;
-}
 
 /* los 3 pasos de compra: elegir, transferir, confirmar */
 .steps{
