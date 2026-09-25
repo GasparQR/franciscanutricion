@@ -139,7 +139,7 @@ El identificador final es el mismo `external_id` anónimo que viaja en
 URL de destino del anuncio, con los parámetros dinámicos de Meta:
 
 ```
-https://franciscanutricion.com/tienda.html?utm_source=meta&utm_medium=paid_social&utm_campaign={{campaign.name}}&utm_content={{ad.name}}
+https://www.franciscanutricion.com/tienda.html?utm_source=meta&utm_medium=paid_social&utm_campaign={{campaign.name}}&utm_content={{ad.name}}
 ```
 
 ### Nota sobre `/api`
