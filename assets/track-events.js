@@ -5,8 +5,9 @@
 // Cómo funciona:
 //  - Un único listener delegado en document (fase de captura) cubre tanto los
 //    CTAs estáticos del HTML como las tarjetas que store.js genera con innerHTML.
-//  - Todos los links de wa.me se decoran con la referencia de origen, así Fran
-//    ve en el chat si el mensaje vino del anuncio, de Instagram o directo.
+//  - La referencia de origen NUNCA se escribe en el texto del mensaje: eso lo
+//    lee el paciente. Queda en un atributo del link y viaja solo dentro del
+//    evento que se manda a Meta.
 //  - Nunca se llama preventDefault(): la navegación a WhatsApp no se bloquea.
 
 (function () {
@@ -14,16 +15,12 @@
 
   /* ---------- Referencia de origen en los links de WhatsApp ---------- */
 
-  function decorateWhatsApp(root) {
+  // Se guarda en el atributo, no en el href: el texto prellenado del mensaje
+  // queda tal cual lo escribió Fran y el paciente nunca ve el código interno.
+  function tagWhatsApp(root) {
     var links = (root || document).querySelectorAll('a[href*="wa.me/"]:not([data-fn-ref])');
     Array.prototype.forEach.call(links, function (a) {
-      var u;
-      try { u = new URL(a.href, location.href); } catch (e) { return; }
-
-      var ref = window.FN.ref(a.getAttribute('data-fn-id') || '');
-      u.searchParams.set('text', (u.searchParams.get('text') || '') + '\n\n— ref: ' + ref);
-      a.href = u.toString();
-      a.setAttribute('data-fn-ref', ref);
+      a.setAttribute('data-fn-ref', window.FN.ref(a.getAttribute('data-fn-id') || ''));
     });
   }
 
@@ -81,7 +78,7 @@
   }
 
   function catalogEvents(grid) {
-    decorateWhatsApp(grid);
+    tagWhatsApp(grid);
 
     if (!window.PRODUCTS) return;
 
@@ -134,7 +131,7 @@
   /* ---------- Arranque ---------- */
 
   function init() {
-    decorateWhatsApp();
+    tagWhatsApp();
     whenCatalogReady(catalogEvents);
   }
 

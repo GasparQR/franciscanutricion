@@ -121,17 +121,17 @@ funciona desde el primer momento.
 ### Atribución de los mensajes de WhatsApp
 
 La venta se cierra por WhatsApp, fuera del sitio, así que `Purchase` no se puede
-medir automáticamente. Para saber de dónde vino cada mensaje, todos los links de
-`wa.me` llevan una referencia al final del texto:
+medir automáticamente. Cada clic a `wa.me` lleva una referencia de origen con la
+forma `canal·origen·campaña·producto·identificador`, por ejemplo
+`web·meta·ebooks-oct·planner-semanal·a1b2c3`.
 
-```
-Hola! Te mando el comprobante de pago por el Ebook "Planner Semanal" ($26.000).
+**Esa referencia no se escribe en el texto del mensaje**: el paciente ve el
+mensaje limpio, tal como está redactado en `store.js` y en el HTML. La
+referencia viaja solo dentro del evento (`Contact` o `InitiateCheckout`) que se
+manda al píxel y a la CAPI, y se consulta en Events Manager.
 
-— ref: web·meta·ebooks-oct·planner-semanal·a1b2c3
-```
-
-Es: canal · origen · campaña · producto · identificador anónimo. Ese
-identificador es el mismo `external_id` que viajó a Meta.
+El identificador final es el mismo `external_id` anónimo que viaja en
+`user_data`, así que un mismo visitante se puede seguir entre eventos.
 
 URL de destino del anuncio, con los parámetros dinámicos de Meta:
 
