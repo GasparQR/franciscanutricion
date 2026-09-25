@@ -35,6 +35,10 @@ function cardHtml(p) {
     ? `<p class="muted" style="margin:-.3rem 0 .6rem;font-size:.92rem">${escapeHtml(p.subtitle)}</p>`
     : '';
 
+  const saving = p.original_price
+    ? `<span class="saving">Ahorrás ${ARS.format(p.original_price - p.price)}</span>`
+    : '';
+
   const priceBlock = p.free
     ? `<div class="price-block"><span class="free-badge">✨ Gratis</span></div>`
     : p.original_price
@@ -44,20 +48,31 @@ function cardHtml(p) {
           <span class="price-old">${ARS.format(p.original_price)}</span>
           <span class="price">${ARS.format(p.price)}</span>
         </div>
+        ${saving}
       </div>`
     : `<div class="price">${ARS.format(p.price)}</div>`;
 
-  const buyLabel = p.pdf_url ? 'Descargar gratis' : p.free ? 'Quiero mi ebook gratis' : 'Confirmar compra';
-  const buyHref = p.pdf_url ? p.pdf_url : whatsappLink(p);
+  const featuredBadge = p.featured ? `<span class="featured-badge">Más elegido</span>` : '';
+
+  const isFreeDownload = Boolean(p.pdf_url);
+  const buyLabel = isFreeDownload ? 'Descargar gratis' : p.free ? 'Quiero mi ebook gratis' : 'Confirmar compra';
+  const buyHref = isFreeDownload ? p.pdf_url : whatsappLink(p);
+
+  // Atributos que lee assets/track-events.js para disparar el evento de Meta.
+  const trackAttrs = isFreeDownload
+    ? ` data-fn-event="Lead" data-fn-id="${p.id}" data-fn-name="${escapeHtml(p.title)}"`
+    : ` data-fn-event="${p.free ? 'Lead' : 'InitiateCheckout'}" data-fn-id="${p.id}"` +
+      ` data-fn-name="${escapeHtml(p.title)}"${p.free ? '' : ` data-fn-value="${p.price}"`}`;
 
   return `
-    <article class="card">
+    <article class="card${p.featured ? ' featured' : ''}" data-product-id="${p.id}">
       ${cover}
+      ${featuredBadge}
       <h3>${escapeHtml(p.title)}</h3>
       ${subtitle}
       <p>${escapeHtml(p.description)}</p>
       ${priceBlock}
-      <a class="btn btn-primary buy-btn" href="${buyHref}" target="_blank" rel="noopener">
+      <a class="btn btn-primary buy-btn" href="${buyHref}" target="_blank" rel="noopener"${trackAttrs}>
         ${buyLabel}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -126,6 +141,9 @@ function setupAliasCopy() {
       document.execCommand('copy');
       helper.remove();
     }
+    // Copiar el alias es la señal de compra inminente más fuerte del sitio.
+    if (window.FN) window.FN.track('CopyAlias', { content_name: alias }, { custom: true });
+
     const original = btn.textContent;
     btn.textContent = '✓ Copiado';
     btn.classList.add('copied');

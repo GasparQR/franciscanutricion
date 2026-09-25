@@ -12,7 +12,20 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Francisca Nutrición · Nutrición real para transformar tus hábitos">
 <meta name="twitter:description" content="Nutrición real, sin dietas extremas. Planes personalizados, cursos prácticos y recetas para tu estilo de vida.">
+<meta name="twitter:image" content="https://franciscanutricion.com/assets/img/og-home.jpg">
+<link rel="canonical" href="https://franciscanutricion.com/">
+<meta property="og:url" content="https://franciscanutricion.com/">
+<meta property="og:site_name" content="Francisca Nutrición">
+<meta property="og:image" content="https://franciscanutricion.com/assets/img/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Francisca Fernandez, Licenciada en Nutrición">
 <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+
+<!-- Verificación de dominio en Meta Business. Alternativa: registro TXT en el DNS.
+     Reemplazar por el token de Business Manager → Seguridad de la marca → Dominios. -->
+<meta name="facebook-domain-verification" content="REEMPLAZAR_TOKEN_VERIFICACION">
+<script src="/assets/meta-pixel.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -375,6 +388,8 @@
 </style>
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=REEMPLAZAR_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
 
 <!-- fondo decorativo de paltas -->
 <div class="palta-bg" id="paltaBg" aria-hidden="true"></div>
@@ -392,12 +407,12 @@
         <a href="#servicios">Servicios</a>
         <a href="#resenas">Reseñas</a>
         <a href="#redes">Comunidad</a>
-        <a href="/tienda.html" class="menu-cta btn btn-ghost">Ver ebooks</a>
-        <a href="https://wa.me/5492995129235?text=Hola!%20Quiero%20reservar%20un%20turno%20para%20una%20consulta%20nutricional." class="menu-cta btn btn-primary" target="_blank" rel="noopener">Reservar consulta</a>
+        <a data-fn-event="ClickEbooks" data-fn-custom data-fn-name="nav-mobile-ebooks" href="/tienda.html" class="menu-cta btn btn-ghost">Ver ebooks</a>
+        <a data-fn-name="nav-mobile-consulta" href="https://wa.me/5492995129235?text=Hola!%20Quiero%20reservar%20un%20turno%20para%20una%20consulta%20nutricional." class="menu-cta btn btn-primary" target="_blank" rel="noopener">Reservar consulta</a>
       </nav>
       <div class="nav-cta">
-        <a href="/tienda.html" class="btn btn-ghost">Ver ebooks</a>
-        <a href="https://wa.me/5492995129235?text=Hola!%20Quiero%20reservar%20un%20turno%20para%20una%20consulta%20nutricional." class="btn btn-primary" target="_blank" rel="noopener">Reservar consulta</a>
+        <a data-fn-event="ClickEbooks" data-fn-custom data-fn-name="nav-ebooks" href="/tienda.html" class="btn btn-ghost">Ver ebooks</a>
+        <a data-fn-name="nav-consulta" href="https://wa.me/5492995129235?text=Hola!%20Quiero%20reservar%20un%20turno%20para%20una%20consulta%20nutricional." class="btn btn-primary" target="_blank" rel="noopener">Reservar consulta</a>
         <button class="burger" id="burger" aria-label="Abrir menú">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         </button>
@@ -415,10 +430,10 @@
         <h1>Nutrición pensada para tu vida real.</h1>
         <p class="sub">Comer saludable no tiene por qué ser complicado. Estoy acá para acompañarte a construir hábitos simples, flexibles y sostenibles que se adapten a vos y a tu rutina.</p>
         <div class="hero-cta">
-          <a href="https://wa.me/5492995129235?text=Hola!%20Quiero%20reservar%20un%20turno%20para%20una%20consulta%20nutricional." class="btn btn-primary" target="_blank" rel="noopener">Reservar consulta
+          <a data-fn-name="hero-consulta" href="https://wa.me/5492995129235?text=Hola!%20Quiero%20reservar%20un%20turno%20para%20una%20consulta%20nutricional." class="btn btn-primary" target="_blank" rel="noopener">Reservar consulta
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="/tienda.html" class="btn btn-ghost">Ver ebooks</a>
+          <a data-fn-event="ClickEbooks" data-fn-custom data-fn-name="hero-ebooks" href="/tienda.html" class="btn btn-ghost">Ver ebooks</a>
         </div>
         <div class="hero-trust">
           <span class="stars">★★★★★</span>
@@ -427,7 +442,7 @@
       </div>
       <div class="hero-photo reveal">
         <div class="ph ph-photo">
-          <img src="/assets/img/fran-consultorio.jpg" alt="Francisca en su consultorio de nutrición" loading="lazy">
+          <img src="/assets/img/fran-consultorio.jpg" alt="Francisca en su consultorio de nutrición" width="1400" height="1592" fetchpriority="high" decoding="async">
         </div>
         
       </div>
@@ -466,7 +481,7 @@
         <span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
         <h3>Consultas 1 a 1</h3>
         <p>Un espacio personalizado para acompañarte a construir hábitos saludables, mejorar tu relación con la comida y alcanzar tus objetivos.</p>
-        <a class="link" href="https://wa.me/5492995129235?text=Hola!%20Quiero%20reservar%20un%20turno%20para%20una%20consulta%20nutricional." target="_blank" rel="noopener">Reservar turno
+        <a data-fn-name="servicios-turno" class="link" href="https://wa.me/5492995129235?text=Hola!%20Quiero%20reservar%20un%20turno%20para%20una%20consulta%20nutricional." target="_blank" rel="noopener">Reservar turno
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </article>
@@ -475,7 +490,7 @@
         <span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg></span>
         <h3>Ebooks descargables</h3>
         <p>Guías prácticas para hacer más simple la organización de tus comidas y acompañarte en tu alimentación diaria.</p>
-        <a class="link" href="/tienda.html">Descubrir ebooks
+        <a data-fn-event="ClickEbooks" data-fn-custom data-fn-name="servicios-ebooks" class="link" href="/tienda.html">Descubrir ebooks
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </article>
@@ -485,8 +500,9 @@
         <p>Próximamente encontrarás cursos abiertos a la comunidad pensados para quienes buscan aprender, incorporar herramientas y adquirir conocimientos sobre alimentación saludable.</p>
       <!--
  <a class="link" href="#contacto">Ver cursos 
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>--> 
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
+-->
       </article>
       
     </div>
@@ -527,7 +543,7 @@
         <p>Alumnas <strong>EMOTION GIRLS CLUB</strong></p>
       </div>
 
-      <a class="benefit-card" href="https://wa.me/5492995129235?text=Hola!%20Quiero%20agendar%20mi%20primera%20consulta%20nutricional%20con%20el%2030%25%20OFF%20de%20descuento%20de%20la%20web." target="_blank" rel="noopener">
+      <a data-fn-name="beneficio-30off" class="benefit-card" href="https://wa.me/5492995129235?text=Hola!%20Quiero%20agendar%20mi%20primera%20consulta%20nutricional%20con%20el%2030%25%20OFF%20de%20descuento%20de%20la%20web." target="_blank" rel="noopener">
         <h3>30% OFF</h3>
         <p>En tu primera consulta nutricional viniendo desde la web.</p>
       </a>
@@ -545,7 +561,7 @@
 
       <div class="social-cards">
         <!-- WhatsApp -->
-        <a href="https://wa.me/+5492995129235" class="social-card wa" target="_blank" rel="noopener">
+        <a data-fn-name="redes-whatsapp" href="https://wa.me/+5492995129235" class="social-card wa" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" color="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.428a.75.75 0 0 0 .921.921l5.573-1.475A11.953 11.953 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.956 9.956 0 0 1-5.187-1.448l-.372-.22-3.305.875.875-3.305-.22-.372A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
           <span>WhatsApp</span>
         </a>
@@ -580,7 +596,7 @@
       </div>
       <div>
         <h4>Contacto</h4>
-        <a href="https://wa.me/+5492995129235">WhatsApp</a>
+        <a data-fn-name="footer-whatsapp" href="https://wa.me/+5492995129235">WhatsApp</a>
         <a href="mailto:franfernandez325@gmail.com">Email</a>
       </div>
       <div>
@@ -591,7 +607,7 @@
     </div>
     <div class="foot-bottom">
       <span>© <span id="year"></span> Francisca Fernandez · Licenciada en Nutrición. Todos los derechos reservados.</span>
-      <span><a href="#">Aviso legal</a> · <a href="#">Política de privacidad</a></span>
+      <span><a href="/terminos.html">Términos y condiciones</a> · <a href="/privacidad.html">Política de privacidad</a></span>
     </div>
   </div>
 </footer>
@@ -615,7 +631,8 @@
   document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
 
 </script>
-<script src="/assets/palta-bg.js"></script>
+<script src="/assets/palta-bg.js" defer></script>
+<script src="/assets/track-events.js" defer></script>
 
 </body>
 </html>

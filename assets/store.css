@@ -158,6 +158,38 @@ h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;l
   padding:1.1rem 1.3rem;color:var(--ink-soft);margin-bottom:1.6rem;
 }
 .notice.error{border-color:var(--clay);color:#8a4a28}
+
+/* señales de confianza sobre el pliegue */
+.trust{
+  display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;list-style:none;
+  margin-bottom:1.4rem;color:var(--ink-soft);font-size:.95rem;font-weight:500;
+}
+
+/* los 3 pasos de compra: elegir, transferir, confirmar */
+.steps{
+  counter-reset:step;list-style:none;display:grid;gap:.9rem;
+  background:rgba(251,248,241,.7);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.3rem 1.5rem 1.3rem 1.3rem;margin-bottom:1.8rem;color:var(--ink-soft);
+}
+.steps li{
+  counter-increment:step;padding-left:2.4rem;position:relative;line-height:1.7;
+}
+.steps li::before{
+  content:counter(step);position:absolute;left:0;top:-.1rem;
+  width:1.7rem;height:1.7rem;border-radius:50%;display:grid;place-items:center;
+  background:var(--sage-deep);color:var(--paper);
+  font-family:'Fraunces',serif;font-size:.95rem;font-weight:600;
+}
+.steps strong{color:var(--ink)}
+
+/* ebook destacado: el combo es el de mayor ticket */
+.card.featured{border-color:var(--clay-soft);box-shadow:0 22px 50px -26px rgba(190,122,82,.75)}
+.featured-badge{
+  display:inline-block;align-self:flex-start;background:var(--clay);color:var(--paper);
+  border-radius:999px;padding:.25em .8em;font-size:.76rem;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;margin-bottom:.6rem;
+}
+.saving{display:block;margin-top:.35rem;color:var(--clay);font-size:.9rem;font-weight:600}
 .alias-copy{display:inline-flex;align-items:center;gap:.5rem;vertical-align:middle}
 .copy-btn{
   display:inline-flex;align-items:center;gap:.35em;font:inherit;font-size:.82rem;font-weight:600;

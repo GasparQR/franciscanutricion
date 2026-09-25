@@ -9,7 +9,19 @@
 <meta property="og:description" content="Guías y recetas descargables para hacer más simple tu alimentación.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ebooks · Francisca Nutrición">
+<meta name="twitter:description" content="Guías y recetas descargables para hacer más simple tu alimentación.">
+<meta name="twitter:image" content="https://franciscanutricion.com/assets/img/og-tienda.jpg">
+<link rel="canonical" href="https://franciscanutricion.com/tienda.html">
+<meta property="og:url" content="https://franciscanutricion.com/tienda.html">
+<meta property="og:site_name" content="Francisca Nutrición">
+<meta property="og:image" content="https://franciscanutricion.com/assets/img/og-tienda.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ebooks de Francisca Nutrición">
 <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+<script src="/assets/meta-pixel.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,6 +29,8 @@
 <link rel="stylesheet" href="/assets/palta-bg.css">
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=REEMPLAZAR_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
 
 <!-- fondo decorativo de paltas -->
 <div class="palta-bg" id="paltaBg" aria-hidden="true"></div>
@@ -40,18 +54,26 @@
     <div class="section-head">
       <span class="eyebrow">Ebooks</span>
       <h2>Guías para simplificar tu alimentación</h2>
-      <p>Materiales prácticos para tu alimentación diaria. Transferí por alias bancario y confirmá tu compra por WhatsApp: te enviamos el Ebook a la brevedad.</p>
+      <p>Materiales prácticos para tu alimentación diaria, con precios de lanzamiento por tiempo limitado.</p>
     </div>
 
-    <!-- EDITAR: alias real -->
-    <div class="notice">
-      💳 Pagá por transferencia al alias
-      <span class="alias-copy">
-        <strong id="aliasValue">franciscanutricion</strong>
-        <button type="button" class="copy-btn" id="copyAliasBtn" aria-label="Copiar alias">📋 Copiar</button>
-      </span>
-      · Titular: Francisca Fernandez. Después tocá «Confirmar compra» en el Ebook que elegiste y mandanos el comprobante por WhatsApp.
-    </div>
+    <ul class="trust">
+      <li>✅ Lic. en Nutrición</li>
+      <li>⚡ Entrega por WhatsApp en menos de 24 h</li>
+      <li>📄 Descarga en PDF, para siempre</li>
+    </ul>
+
+    <ol class="steps">
+      <li><strong>Elegí tu ebook</strong> y mirá el precio de lanzamiento.</li>
+      <li><strong>Transferí al alias</strong>
+        <span class="alias-copy">
+          <strong id="aliasValue">franciscanutricion</strong>
+          <button type="button" class="copy-btn" id="copyAliasBtn" aria-label="Copiar alias">📋 Copiar</button>
+        </span>
+        <span class="muted">· Titular: Francisca Fernandez</span>
+      </li>
+      <li><strong>Confirmá por WhatsApp</strong> con el comprobante y te lo enviamos.</li>
+    </ol>
 
     <div id="catalog-status"></div>
     <div class="carousel">
@@ -69,7 +91,7 @@
   <div class="wrap">
     <div class="foot-bottom">
       <span>© <span id="year"></span> Francisca Fernandez · Licenciada en Nutrición.</span>
-      <span><a href="/">Inicio</a> · <a href="/#contacto">Contacto</a></span>
+      <span><a href="/">Inicio</a> · <a href="/#contacto">Contacto</a> · <a href="/terminos.html">Términos y condiciones</a> · <a href="/privacidad.html">Política de privacidad</a></span>
     </div>
   </div>
 </footer>
@@ -77,6 +99,7 @@
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script src="/assets/products.js"></script>
 <script src="/assets/store.js"></script>
-<script src="/assets/palta-bg.js"></script>
+<script src="/assets/palta-bg.js" defer></script>
+<script src="/assets/track-events.js" defer></script>
 </body>
 </html>
