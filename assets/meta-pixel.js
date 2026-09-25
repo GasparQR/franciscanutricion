@@ -2,15 +2,16 @@
 //
 // Va en el <head> de TODAS las páginas, SIN defer (antes que cualquier otro script).
 //
-// CONFIGURACIÓN: reemplazar REEMPLAZAR_PIXEL_ID por el ID real del pixel
-// (Events Manager → Orígenes de datos → tu conjunto de datos → ID). El mismo
-// valor va cargado en Vercel como META_PIXEL_ID para la Conversions API.
+// El PIXEL_ID es público por diseño (viaja en el HTML). El secreto es el token
+// de la Conversions API, que vive solo en el servidor. Si el pixel cambia, hay
+// que actualizarlo acá, en el <noscript> de las 4 páginas y en la variable de
+// entorno META_PIXEL_ID de Vercel.
 //
-// Mientras el ID sea el placeholder el pixel no carga: el sitio funciona igual
-// y no se envían eventos rotos.
+// El guard de abajo es una red de seguridad: si alguien deja el placeholder,
+// el pixel no carga en vez de mandar eventos a un ID inexistente.
 
 (function (w, d) {
-  var PIXEL_ID = 'REEMPLAZAR_PIXEL_ID';
+  var PIXEL_ID = '1071270859131219';
   var CAPI_URL = '/api/meta-event';
   var ATTR_KEY = 'fn_attr';
   var UID_KEY = 'fn_uid';

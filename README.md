@@ -99,13 +99,16 @@ Todo evento nuevo tiene que agregarse también a `ALLOWED_EVENTS` en
 
 ### Configuración
 
-1. En `assets/meta-pixel.js`, reemplazar `REEMPLAZAR_PIXEL_ID` por el ID real
-   del píxel. Lo mismo en el `<noscript>` de `index.html`, `tienda.html`,
-   `privacidad.html` y `terminos.html`.
-2. En `index.html`, reemplazar `REEMPLAZAR_TOKEN_VERIFICACION` por el token de
+El Pixel ID es `1071270859131219`. Está en `assets/meta-pixel.js` y en el
+`<noscript>` de las 4 páginas. Si alguna vez cambia, hay que reemplazarlo en los
+5 lugares y en la variable `META_PIXEL_ID`.
+
+Falta todavía:
+
+1. En `index.html`, reemplazar `REEMPLAZAR_TOKEN_VERIFICACION` por el token de
    verificación de dominio de Meta (o verificar por registro TXT en el DNS y
    borrar esa línea).
-3. Cargar en Vercel (Settings → Environment Variables):
+2. Cargar en Vercel (Settings → Environment Variables):
 
 | Variable | Production | Preview | Qué es |
 |---|---|---|---|
@@ -114,9 +117,9 @@ Todo evento nuevo tiene que agregarse también a `ALLOWED_EVENTS` en
 | `META_ALLOWED_HOSTS` | ✅ | ✅ | `franciscanutricion.com,vercel.app` |
 | `META_TEST_EVENT_CODE` | ❌ | ✅ | Solo para probar. Con este código los eventos **no** cuentan para optimización. |
 
-Mientras el Pixel ID sea el placeholder, el píxel no carga y no se envía nada:
-el sitio funciona igual. La referencia de origen en los mensajes de WhatsApp sí
-funciona desde el primer momento.
+El píxel del navegador ya funciona con solo desplegar. La CAPI, en cambio, no
+envía nada hasta que estén cargadas `META_PIXEL_ID` y `META_CAPI_TOKEN`: el
+endpoint responde `204` y no rompe el front.
 
 ### Atribución de los mensajes de WhatsApp
 
