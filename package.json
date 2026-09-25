@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "name": "franciscanutricion",
+  "description": "Sitio estático. Este package.json no declara dependencias: existe solo para fijar el módulo de las funciones de /api como CommonJS y evitar que Node herede un package.json de un directorio superior.",
+  "comment-type": "NO agregar \"type\": \"module\": api/meta-event.js usa require() y module.exports.",
+  "scripts": {
+    "dev": "npx vercel dev"
+  }
+}

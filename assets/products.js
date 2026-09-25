@@ -19,6 +19,7 @@ const PRODUCTS = [
     description: 'Planificá tus comidas, tené ideas concretas a mano y olvidate de pensar todos los días qué vas a comer. Y así, un problema menos :)',
     price: 38000,
     original_price: 49000,
+    featured: true,
     cover_image: '/assets/covers/combo-organizacion.jpg',
   },
   {
