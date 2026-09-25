@@ -1,7 +1,7 @@
 # franciscanutricion
 
 Landing de Francisca Nutrición (`index.html`, sitio estático) + **catálogo de
-Ebooks con compra manual** (`tienda.html`).
+Ebooks con compra manual** (`tienda.html`). 
 
 Sitio 100% estático, sin backend, sin base de datos y sin dependencias de Node.
 
