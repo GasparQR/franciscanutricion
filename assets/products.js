@@ -1,6 +1,10 @@
 // products.js · Catálogo estático de Ebooks
 // Para agregar, editar o dar de baja un Ebook, modificá este archivo y hacé deploy.
 // No hace falta base de datos ni backend.
+//
+// IMPORTANTE: después de tocar este archivo, correr `npm run jsonld`.
+// Los datos estructurados que leen Meta y Google se generan desde acá, y si no
+// se regeneran quedan con los precios viejos.
 
 const PRODUCTS = [
   {

@@ -47,6 +47,13 @@ Abrí `assets/products.js` y modificá el array `PRODUCTS`. Cada Ebook es:
 Agregar, editar o dar de baja un Ebook es editar este archivo y volver a
 hacer deploy. No requiere base de datos ni backend.
 
+**Después de editarlo, correr `npm run jsonld`.** El catálogo se renderiza con
+JavaScript, así que un rastreador que no ejecuta JS (el de Meta, entre otros) ve
+un `<div id="catalog">` vacío: no encuentra ni productos ni precios. El script
+`scripts/build-jsonld.js` genera los datos estructurados desde `PRODUCTS` y los
+escribe en el `<head>` de `index.html` y `tienda.html`, entre los marcadores
+`<!-- jsonld:auto -->`. Si no lo corrés, quedan los precios viejos.
+
 ## Editar el alias bancario
 
 En `tienda.html`, buscar el comentario `<!-- EDITAR: alias real -->` y
@@ -139,7 +146,7 @@ El identificador final es el mismo `external_id` anónimo que viaja en
 URL de destino del anuncio, con los parámetros dinámicos de Meta:
 
 ```
-https://franciscanutricion.com/tienda.html?utm_source=meta&utm_medium=paid_social&utm_campaign={{campaign.name}}&utm_content={{ad.name}}
+https://www.franciscanutricion.com/tienda.html?utm_source=meta&utm_medium=paid_social&utm_campaign={{campaign.name}}&utm_content={{ad.name}}
 ```
 
 ### Nota sobre `/api`
